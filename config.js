@@ -1,4 +1,4 @@
-import {watchFile, unwatchFile} from 'ar';
+import {watchFile, unwatchFile} from 'fs';
 import chalk from 'chalk';
 import {fileURLToPath} from 'url';
 import fs from 'fs'; 
@@ -7,25 +7,26 @@ import fetch from 'node-fetch';
 import axios from 'axios';
 import moment from 'moment-timezone';
 
-global.botnumber = ""
+global.botnumber = "*『🔥┇𝐑𝐈𝐌𝗨𝐑𝗨』*"
 global.confirmCode = ""
 
 global.owner = [
-  ['201028085788', '❯⏐  𝐸𝐿𝐴𝐾𝑅𝐴𝐵 ', true],
-  ['201028085788'],
-  ['201028085788'],
-  ['201028085788']
-];
+  ['201225655220', ':┋𝐓𝐀𝐑𝐁𝐎𝐎 𝐎𝐖𝐍𝐄𝐑┋:', true],
+  ['201228616765', '𝟑𝑀𝐾_𝑆𝐻𝐴𝐷𝑂𝑊£™§✓¶', true],
 
-global.suittag = ['201028085788'];
-global.prems = ['201028085788'];
-global.packname = '❯⏐ elakreb ';
-global.author = '> ❯⏐ 𝐁𝐨𝐭';
-global.wm = '> 𝐵𝛩𝑇 𝐸𝐿𝐴𝐾𝑅𝐴𝐵';
-global.titulowm = ' 𝐵𝛩𝑇 𝐸𝐿𝐴𝐾𝑅𝐴𝐵';
-global.titulowm2 = `>𝐵𝛩𝑇 𝐸𝐿𝐴𝐾𝑅𝐴𝐵`
-global.igfg = '> ❯⏐ 𝐵𝛩𝑇 𝐸𝐿𝐴𝐾𝑅𝐴𝐵';
-global.wait = '*[ ⏳ ]  _جاري التحميل•_*    https://whatsapp.com/channel/0029VahbMZl4tRrkdpJrCv2f';
+global.suittag = ['201225655220'];
+global.prems = ['201228616765','201225655220'];
+
+global.packname = '• 𝙱𝙾𝚃 𝙴𝙻 𝚃𝙰𝚁𝙱𝙾𝙾 | 🐼❤️) ء';
+global.author = '‹ ᴛᴀʀʙᴏᴏ ʙᴏᴛ ،| 🌝♥️';
+global.vs = 'V2 • 1.0.5'; 
+global.wm = '• 🅃🄰🅁🄱🄾🄾 🄱🄾🅃 | ،💛؛❥!';
+global.titulowm = '•❬ 𝒕𝒂𝒓𝒃𝒐𝒐 𝒃𝒐𝒕 ❭•︎';
+global.titulowm2 = `• 𝙱𝙾𝚃 𝙴𝙻 𝚃𝙰𝚁𝙱𝙾𝙾 | 🐼❤️)`
+global.igfg = '𝑇𝐴𝑅𝒃𝑂𝑂 𝒃𝑂𝑇';
+global.rwait ='⌛'; 
+global.done ='✅'; 
+global.wait = '*انتظر جاري التحميل....*';
 
 global.imagen1 = fs.readFileSync('./Menu2.jpg');
 global.imagen2 = fs.readFileSync('./src/nuevobot.jpg');
@@ -33,30 +34,27 @@ global.imagen3 = fs.readFileSync('./src/Pre Bot Publi.png');
 global.imagen4 = fs.readFileSync('./Menu.png');
 global.imagen5 = fs.readFileSync('./src/+18.jpg');
 global.imagen6 = fs.readFileSync('./Menu3.png');
-global.imagen7 = fs.readFileSync('./src/menu_pt.png');
-global.imagen8 = fs.readFileSync('./src/menu_fr.png')
-global.imagen9 = fs.readFileSync('./src/menu_en.png')
-global.imagen10 = fs.readFileSync('./src/menu_ru.png')
+
 global.mods = [];
 
 //* *******Tiempo***************
 global.d = new Date(new Date + 3600000);
-global.locale = 'es';
+global.locale = 'ar';
 global.dia = d.toLocaleDateString(locale, {weekday: 'long'});
-global.fecha = d.toLocaleDateString('es', {day: 'numeric', month: 'numeric', year: 'numeric'});
-global.mes = d.toLocaleDateString('es', {month: 'long'});
-global.año = d.toLocaleDateString('es', {year: 'numeric'});
-global.tiempo = d.toLocaleString('en-US', {hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true});
+global.fecha = d.toLocaleDateString('ar', {day: 'numeric', month: 'numeric', year: 'numeric'});
+global.mes = d.toLocaleDateString('ar', {month: 'long'});
+global.año = d.toLocaleDateString('ar', {year: 'numeric'});
+global.tiempo = d.toLocaleString('ar-US', {hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true});
 //* ****************************
-global.wm2 = `${dia} ${fecha}\nThe Mystic - Bot`;
-global.gt = '> ❯⏐ 𝐵𝛩𝑇 𝐸𝐿𝐴𝐾𝑅𝐴𝐵🎀';
-global.mysticbot = '> ❯⏐  𝐵𝛩𝑇 𝐸𝐿𝐴𝐾𝑅𝐴𝐵🎀';
-global.md = 'https://atom.bio/elakrabelyotyobr';
-global.mysticbot = 'https://atom.bio/elakrabelyotyobr';
-global.waitt = '*[ ⏳ ]  _جاري التحميل•_*    https://whatsapp.com/channel/0029VahbMZl4tRrkdpJrCv2f';
-global.waittt = '*[ ⏳ ]  _جاري التحميل•_*    https://whatsapp.com/channel/0029VahbMZl4tRrkdpJrCv2f';
-global.waitttt = '*[ ⏳ ]  _جاري التحميل•_*    https://whatsapp.com/channel/0029VahbMZl4tRrkdpJrCv2f';
-global.nomorown = '201028085788';
+global.wm2 = `${dia} ${fecha}\n𝑻𝑨𝑹𝑩𝑶𝑶 𝑩𝑶𝑻᪣︎`;
+global.gt = '𝑇𝐴𝑅𝒃𝑂𝑂 𝒃𝑂𝑇𐇵︎';
+global.mysticbot = '𝑇𝐴𝑅𝐵𝑂𝑂 𝐵𝑂𝑇᪣︎';
+global.md = '𝚃𝙰𝚁𝙱𝙾𝙾 𝙱𝙾𝚃💛📒 ؛';
+global.mysticbot ='𝚃𝙰𝚁𝙱𝙾𝙾 𝑩𝒐𝒕';
+global.waitt = '*[ ⏳ ] انتظر جاري التحميل*';
+global.waittt = '*[ ⏳ ] انتظر جاري التحميل*';
+global.waitttt = '*[ ⏳ ] انتظر جاري التحميل *';
+global.nomorown = '201225655220';
 global.pdoc = ['application/vnd.openxmlformats-officedocument.presentationml.presentation', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', 'application/vnd.ms-excel', 'application/msword', 'application/pdf', 'text/rtf'];
 global.cmenut = '❖––––––『';
 global.cmenub = '┊✦ ';
@@ -71,8 +69,8 @@ global.htki = '*⭑•̩̩͙⊱•••• ☪*';
 global.htka = '*☪ ••••̩̩͙⊰•⭑*';
 global.comienzo = '• • ◕◕════';
 global.fin = '════◕◕ • •';
-global.botdate = `*[ 📅 ] Fecha:*  ${moment.tz('America/Mexico_City').format('DD/MM/YY')}`;
-global.bottime = `*[ ⏳ ] Hora:* ${moment.tz('America/Mexico_City').format('HH:mm:ss')}`;
+global.botdate = `*[ 📅 ] التاريخ:*  ${moment.tz('Egypt/cairo_city').format('DD/MM/YY')}`;
+global.bottime = `*[ ⏳ ] الوقت:* ${moment.tz('Egypt/cairo_city').format('HH:mm:ss')}`;
 global.fgif = {key: {participant: '0@s.whatsapp.net'}, message: {'videoMessage': {'title': wm, 'h': `Hmm`, 'seconds': '999999999', 'gifPlayback': 'true', 'caption': bottime, 'jpegThumbnail': fs.readFileSync('./Menu.png')}}};
 global.multiplier = 99;
 global.flaaa = [
